@@ -27,7 +27,6 @@ requirements:
     - poetry-core >=1.0.0
     - poetry-dynamic-versioning >=1.0.1
     - pip
-    - wget
   run:
     - python >=3.10,<3.12
     - click
@@ -58,6 +57,8 @@ requirements:
     - fsspec >=2023.9.0,<2024.0.0
     - fastparquet >=2023.8.0,<2024.0.0
     - graspologic >=3.3.0,<4.0.0
+    - fastp
+    - zlib-ng
 
 test:
   imports:
@@ -74,9 +75,11 @@ about:
   summary: |
      A command-line tool and library to process and analyze sequencing data from Molecular Pixelation (MPX) assays.
   license: MIT
-  license_file: LICENSE
+  license_family: MIT
+  license_file: LICENSE.txt
 
 extra:
   maintainers:
     - fbdtemme
     - johandahlberg
+    - ambarrio
