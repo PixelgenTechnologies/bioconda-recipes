@@ -19,6 +19,14 @@ build:
   run_exports:
     - {{ pin_subpackage('pixelator', max_pin="x.x") }}
 
+extra:
+  add_labels:
+    broken:
+      # Note that this version is broken, even if it has passed the build stage,
+      # because it is using incompatible versions of dependencies.
+      - version: 0.20.1
+        build_number: 0
+
 requirements:
   host:
     - python >=3.10,<3.12
@@ -34,7 +42,7 @@ requirements:
     - pyfastx
     - yappi
     - pandas >=2.0.0,<3.0.0
-    - numpy <2.0.0
+    - numpy = >=2.0.0,<3.0.0
     - python-annoy <=1.17.0
     # I had to lock xopen < 1.9.0 because zlib-ng which is required by xopen
     # does not install as expected
@@ -59,7 +67,7 @@ requirements:
     - fastp
     - plotly
     - python-duckdb >=1.2.1,<2.0.0
-    - faiss-cpu >=1.9.0
+    - faiss-cpu >=1.10.0
     - zstandard >=0.23.0
 
 test:
